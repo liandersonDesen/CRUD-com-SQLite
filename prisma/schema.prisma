@@ -6,16 +6,15 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "sqlite"
-  url      = DATABASE_URL 
+  url      = "file:../src/database/database.sqlite"
 }
 
 model Usuario {
-  id    Int ,
-  nome  String,
-  email String
+  id    Int @id @default(autoincrement()) 
+  nome  String
+  email String @unique
 }
