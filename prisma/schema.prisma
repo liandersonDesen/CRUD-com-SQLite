@@ -17,5 +17,14 @@ model Usuario {
   id    Int @id @default(autoincrement()) 
   nome  String
   email String @unique
-  password String    
+  password String
+}
+model Product {
+  id Int @id @default(autoincrement()) 
+  name String
+  description String ?
+  price Float
+  stock Int
+  createdAt DateTime @default(now()) 
+  update DateTime @updatedAt
 }
