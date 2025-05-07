@@ -1,13 +1,13 @@
 import express from "express";
-import userRoutes from "./routes/userRoutes.js"
-import productRoutes from "./routes/productRoutes.js"
+import userRoutes from "./routes/routes/userRoutes.js"
+import productRoutes from "./routes/routes/productRoutes.js"
 
 const app = express()
 
 app.use(express.json())
 
 app.use("/usuarios",userRoutes);
-app.use("/produtos",productRoutes);
+app.use("/products",productRoutes);
 
 
 app.get("/",(req,res)=>{
